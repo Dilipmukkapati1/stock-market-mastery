@@ -1,0 +1,16 @@
+{
+  "name": "stock-market-mastery",
+  "owner": {
+    "name": "Stock Market Mastery"
+  },
+  "metadata": {
+    "description": "Generate high-quality 7-layer company learning documents and Kindle EPUB exports from primary filings."
+  },
+  "plugins": [
+    {
+      "name": "stock-market-mastery",
+      "source": "./plugins/stock-market-mastery",
+      "description": "Document-first equity learning curriculum: research, 7-layer lessons, quizzes, grading, EPUB for Kindle."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git branch *)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'Initial commit: Stock Market Mastery skills plugin *)",
+      "Bash(git remote *)",
+      "Bash(git push *)"
+    ]
+  }
+}

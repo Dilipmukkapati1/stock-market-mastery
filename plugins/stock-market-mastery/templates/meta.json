@@ -1,0 +1,17 @@
+{
+  "ticker": "TSM",
+  "companyName": "Taiwan Semiconductor Manufacturing Company Limited",
+  "generatedAt": "ISO-8601",
+  "currencyNote": "e.g. IFRS USD companyfacts / US-GAAP",
+  "primaryFiling": {
+    "form": "20-F",
+    "filed": "YYYY-MM-DD",
+    "cik": "0001046179"
+  },
+  "layers": [1, 2, 3, 4, 5, 6, 7],
+  "status": "complete|partial",
+  "grader": {
+    "ran": false,
+    "overallStatus": null
+  }
+}

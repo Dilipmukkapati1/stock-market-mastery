@@ -1,0 +1,2 @@
+ebooklib>=0.18
+markdown>=3.5

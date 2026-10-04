@@ -1,0 +1,19 @@
+{
+  "name": "stock-market-mastery",
+  "displayName": "Stock Market Mastery",
+  "version": "1.0.0",
+  "description": "Generate excellent 7-layer equity learning documents from primary sources and export Kindle-ready EPUBs. No web app — documents only.",
+  "author": {
+    "name": "Stock Market Mastery"
+  },
+  "license": "MIT",
+  "keywords": [
+    "investing",
+    "equity-research",
+    "education",
+    "epub",
+    "kindle",
+    "sec",
+    "curriculum"
+  ]
+}
