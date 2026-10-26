@@ -1,0 +1,11 @@
+# Part One · Section 5 — Product Quality
+
+"Quality" for NVIDIA means three measurable things: performance per watt, delivery reliability, and whether the software works when a customer scales from 100 GPUs to 100,000.
+
+**Performance leadership, with receipts.** Each generation has roughly doubled-to-tripled effective AI throughput: Hopper (2022) → Blackwell (2024) → Blackwell Ultra (2025) → Vera Rubin (2026). Rubin's headline gains are memory-driven — HBM4 bandwidth up to 22 TB/s per GPU, nearly 3x Blackwell's — because modern AI workloads are limited by feeding the cores, not the cores themselves. Independent benchmarks (MLPerf) have consistently shown NVIDIA systems at or near the top in both training and inference, and — critically — NVIDIA submits and wins at *scale*, which is what customers buy.
+
+**Delivery: the Blackwell lesson.** The one clear quality blemish of the era was Blackwell's ramp: a mask defect found in 2024 forced a design fix and delayed volume shipments by roughly a quarter, and early GB200 racks had well-reported installation and thermal teething problems at the first cloud deployments. NVIDIA absorbed it (a fiscal 2026 gross margin of 71.1%, down from 75.0%, is partly the cost of the transition and of rack-level complexity) and Blackwell Ultra's ramp was cleaner. Vera Rubin entered full production in June 2026 with racks already running at cloud partners by August — early evidence the annual cadence is sustainable, though Rubin Ultra's ~600 kW Kyber racks in 2027 push power and cooling into territory the industry has never deployed at scale.
+
+**The software quality moat.** CUDA's depth — two decades of libraries, profilers, and answered Stack Overflow questions — is a quality attribute competitors cannot fab their way to. AMD's ROCm and the hyperscalers' stacks have narrowed the gap for standard training workloads; the gap persists in the long tail of models, tools, and edge cases, which is where production time actually goes.
+
+**Where quality is genuinely contested:** cost per token. For stable, high-volume inference on a single model, a custom ASIC (Google's TPU, Amazon's Trainium) can beat a general-purpose GPU on economics — which is why the quality debate is shifting from "fastest chip" to "cheapest useful token," and why NVIDIA's Rubin pitch leads with token cost, not FLOPS.
