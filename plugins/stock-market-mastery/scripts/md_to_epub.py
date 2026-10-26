@@ -3,7 +3,7 @@
 
 Usage:
   python scripts/md_to_epub.py output/TSM
-  python scripts/md_to_epub.py output/TSM --out output/TSM/book.epub
+  python scripts/md_to_epub.py output/TSM --out output/TSM/Taiwan Semiconductor.epub
 
 Supports local images referenced from Markdown (`![alt](path)` or `<img src>`).
 Prefers pandoc when available; otherwise uses ebooklib + markdown.
@@ -488,7 +488,15 @@ def main() -> None:
     if not folder.is_dir():
         raise SystemExit(f"Not a directory: {folder}")
     meta = read_meta(folder)
-    out = args.out or (folder / "book.epub")
+    if args.out:
+        out = args.out
+    else:
+        # Name the EPUB for the business, not "book": e-readers and Send to
+        # Kindle title personal documents from the file name, so every
+        # "book.epub" lands in the library as "book".
+        raw_name = str(meta.get("companyName") or folder.name)
+        safe_name = re.sub(r'[\\/:*?"<>|]', "", raw_name).strip() or folder.name
+        out = folder / f"{safe_name}.epub"
     out.parent.mkdir(parents=True, exist_ok=True)
 
     chapters = collect_markdown(folder)

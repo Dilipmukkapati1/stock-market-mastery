@@ -36,7 +36,7 @@ Curriculum progress for {TICKER}:
 - [ ] 5. 09-capstone.md
 - [ ] 6. Assemble 10-quizzes.md + book.md
 - [ ] 7. content-grader-agent (fix blockers)
-- [ ] 8. Offer epub-export → book.epub
+- [ ] 8. Offer epub-export → <CompanyName>.epub
 ```
 
 ### Step 1 — Source pack
@@ -98,7 +98,7 @@ output/{TICKER}/
   09-capstone.md
   10-quizzes.md
   book.md
-  book.epub          # after epub-export
+  <CompanyName>.epub  # after epub-export, named for the business
   grading-report.md  # after content-grader-agent
 ```
 

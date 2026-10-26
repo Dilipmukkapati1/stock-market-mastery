@@ -8,7 +8,7 @@ description: >-
 
 # EPUB export (Kindle-ready)
 
-Turn `output/{TICKER}/` Markdown into `book.epub`.
+Turn `output/{TICKER}/` Markdown into an EPUB **named for the business** — `<CompanyName>.epub` (from `meta.json` `companyName`). E-readers and Send to Kindle title personal documents from the file name, so a file called `book.epub` shows up in the library as "book". The build script does this by default; pass `--out` only to override.
 
 ## Preconditions
 
@@ -39,13 +39,13 @@ python scripts/md_to_epub.py output/{TICKER}
 Custom output path:
 
 ```bash
-python scripts/md_to_epub.py output/{TICKER} --out output/{TICKER}/book.epub
+python scripts/md_to_epub.py output/{TICKER}   # writes output/{TICKER}/<CompanyName>.epub
 ```
 
-5. Verify the script printed `Wrote …` and `book.epub` is non-trivial in size.
+5. Verify the script printed `Wrote …` and the named `.epub` is non-trivial in size.
 6. Tell the user how to sideload:
 
-- **Kindle**: send-to-Kindle (email/app) or USB copy of `book.epub` (or convert via Amazon if required for their device generation)
+- **Kindle**: send-to-Kindle (email/app) or USB copy of the named `.epub` (or convert via Amazon if required for their device generation)
 - Keep source Markdown in the same folder for later revisions
 
 ## Images
@@ -84,6 +84,6 @@ Local images in Markdown are embedded in the EPUB:
 
 ## Done criteria
 
-- [ ] `output/{TICKER}/book.epub` exists
+- [ ] `output/{TICKER}/<CompanyName>.epub` exists and is named for the business
 - [ ] User given sideload instructions
 - [ ] No web app code created
