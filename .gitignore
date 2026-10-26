@@ -4,7 +4,5 @@ __pycache__/
 .venv/
 venv/
 plugins/stock-market-mastery/.venv/
-plugins/stock-market-mastery/output/*
-!plugins/stock-market-mastery/output/.gitkeep
-*.epub
+plugins/stock-market-mastery/output/*/*.epub
 .claude/worktrees/
