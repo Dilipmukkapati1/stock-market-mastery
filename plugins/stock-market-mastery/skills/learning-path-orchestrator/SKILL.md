@@ -34,6 +34,7 @@ Produce a **document book**, never application code.
 
 ```
 Book progress for {TICKER}:
+- [ ] 0. Read output/{TICKER}/watchlist.md if it exists (the owner's standing requests for this company)
 - [ ] 1. document-fetch-agent → sources/ (source-pack.md, facts.json)
 - [ ] 2. 00-front-matter.md + meta.json (include "format": "two-part")
 - [ ] 3. Part One chapters (slots 01–06): Management, The Company, Financials, The Product, Product Quality, Customers
@@ -41,6 +42,10 @@ Book progress for {TICKER}:
 - [ ] 5. content-grader-agent (fix blockers)
 - [ ] 6. Offer epub-export → <CompanyName>.epub
 ```
+
+### Step 0 — The reader watchlist (mandatory)
+
+If `output/{TICKER}/watchlist.md` exists, read it before anything else. Its **Always include** items are required coverage and its **Open requests** must each be covered in the book — or, where coverage is impossible (undisclosed data, an event that hasn't happened), addressed explicitly in the relevant chapter with the reason. When the book is done, move each covered Open request to the file's **Addressed** section with the edition and date. If no watchlist exists, create one from [templates/watchlist.md](../../templates/watchlist.md) (an empty one is fine) so future requests have a home.
 
 ### Step 1 — Source pack
 
@@ -89,6 +94,7 @@ If — and only if — the owner explicitly asks for a curriculum/learning-path 
 ```
 output/{TICKER}/
   meta.json
+  watchlist.md   (owner's standing requests for this company — read first, update last)
   sources/
   00-front-matter.md
   01-market.md … 08-document-literacy.md   (slot names; real titles in headings)
@@ -100,6 +106,7 @@ output/{TICKER}/
 ## Done criteria
 
 - Part One complete (six chapters) and Part Two complete (two or three chapters), all cited
+- Every OPEN item in `output/{TICKER}/watchlist.md` covered or explicitly flagged as uncoverable, and covered items checked off in that file
 - **Zero** quiz sections, mastery checklists, DIY prompts, or assignment apparatus anywhere in the book
 - Every chapter is about this company; generic concepts appear only in passing, in service of a company fact
 - Grader has no unresolved blockers

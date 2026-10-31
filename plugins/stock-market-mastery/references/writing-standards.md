@@ -13,6 +13,10 @@ The first Mercor book was rejected by the owner in these terms: *"less about the
 - **No generic pedagogy.** Investing concepts (discounting, switching costs, operating leverage…) appear only in service of a company-specific fact, explained in a sentence or two where the fact needs it — never as standalone lessons, and never as a chapter.
 - **Numbers lead.** Prefer the company's own reported figures, with the period and source attached, over narrative. Label estimates, forecasts, and third-party claims as such, every time.
 
+## The reader watchlist (per company)
+
+Each company folder carries a `watchlist.md` — the owner's standing requests for anything produced about that company (template: [templates/watchlist.md](../templates/watchlist.md)). It records what the owner is looking for next time: comparisons to always run, metrics to always track, questions to answer when data arrives. Any agent producing a book, EPUB, update, or substantive answer about a company **reads its watchlist first**, covers the open items (or says why they can't be covered), and checks them off in the file when an edition addresses them. Requests the owner states in conversation are appended to the company's watchlist, dated, in the owner's terms. This is distinct from `feedback.md`, which holds corrections to a specific existing book; the watchlist is forward-looking and applies to everything about the company.
+
 ## Default book format — the two-part company book
 
 Unless the owner explicitly requests the legacy curriculum edition (see layer-specs.md), every company book is:

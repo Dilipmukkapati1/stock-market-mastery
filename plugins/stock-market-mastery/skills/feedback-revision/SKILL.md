@@ -69,3 +69,7 @@ book's revision history — never delete them.)
   do not fabricate the requested content.
 - Commit messages, when the user asks to commit: `Revise {TICKER}: address
   feedback — <item titles>`.
+
+## Watchlist vs feedback
+
+Corrections and improvements to *this* book belong in its `feedback.md` (this skill's workflow). Forward-looking requests — information the owner wants included in *future* editions, updates, or answers about the company — belong in the company's `watchlist.md` (see references/writing-standards.md, "The reader watchlist"). When a feedback conversation produces a forward-looking request, record it in the watchlist as well, dated and in the owner's terms.

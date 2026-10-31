@@ -31,6 +31,7 @@ Deterministic quality gate for **documents** in `output/{TICKER}/`.
 
 ### Warnings
 
+0. **Watchlist gaps**: OPEN items in `output/{TICKER}/watchlist.md` that the book neither covers nor explicitly flags as uncoverable (state the reason in the report; the orchestrator must check off covered items in the watchlist itself).
 1. Thin Part Two (chapters under ~1,000 words, or a major area — competition, risks, valuation — unaddressed)
 2. Heavy dependence on secondary sources when SEC data exists
 3. Estimates or third-party claims not labeled as such
