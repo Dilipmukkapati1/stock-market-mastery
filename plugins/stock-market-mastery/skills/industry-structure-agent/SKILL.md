@@ -1,49 +1,44 @@
 ---
 name: industry-structure-agent
 description: >-
-  Writes Layer 2 (Industry structure) Stock Market Mastery lesson Markdown for a
-  ticker under output/{TICKER}/02-industry.md. Use when generating or revising the
-  Industry structure layer learning document — not application code.
+  Writes the industry-structure analysis for a Stock Market Mastery two-part company book: Part One support for The Company chapter and the industry section of Part Two, Deep Research I. Curriculum editions only on explicit request.
 ---
 
-# Industry structure agent (Layer 2)
+# Industry structure agent
 
-Generate a **teaching document**, not code.
+Generate **company-analysis writing**, not code and not coursework.
 
 ## Before writing
 
 1. Ensure `output/{TICKER}/sources/` exists (run **document-fetch-agent** if missing)
-2. Read [references/writing-standards.md](../../references/writing-standards.md)
+2. Read [references/writing-standards.md](../../references/writing-standards.md) — especially the company-first rule
 3. Read [references/citation-rules.md](../../references/citation-rules.md)
-4. Read Layer 2 notes in [references/layer-specs.md](../../references/layer-specs.md)
-5. Use structure in [templates/layer-lesson.md](../../templates/layer-lesson.md)
+4. Read the chapter specs in [references/layer-specs.md](../../references/layer-specs.md)
+5. Use the chapter structure in [templates/layer-lesson.md](../../templates/layer-lesson.md)
 
-## Layer focus
+## Focus (default two-part book)
 
-Map the industry: competitors, concentration, substitutes, switching costs, pricing power, cyclicality, and where {TICKER} sits in the value chain. Ground share/TAM claims in disclosed or clearly labeled estimates.
+Map the industry {TICKER} competes in: competitors, concentration, substitutes, switching costs, pricing power, cyclicality, and where the company sits in the value chain. Ground share and TAM claims in disclosed or clearly labeled estimated data, always with the definition and date attached (unit share vs revenue share; gross vs net).
 
-## Output
+## Output (default two-part book)
 
-Write `output/{TICKER}/02-industry.md` with:
+Contribute the industry-structure section of `07-supply-chain.md` (Part Two — Deep Research I) and industry facts for `02-industry.md` (Part One — The Company).
 
-- Learning objective + why it matters for this ticker
-- 3–6 full concept blocks (all required fields)
-- Text-first visualization notes (tables/ASCII only)
-- 8–12 mastery checklist items
-- 3 misconceptions
-- 10-question quiz (A/B/C, answer, why, concept tag)
-- Bridge sentence toward: Company profile — how exactly does this firm make money inside that industry?
-
-## Quality bar
-
-- Every company-specific number cited from the source pack (or newly added cited source)
-- Every ratio includes an inline **reference range**
-- No investment advice; label hypotheses clearly
-- Do not invent undisclosed figures
+Write narrative analysis: company-specific, numbers-led, cited. **No** concept-block scaffolding, quizzes, checklists, or DIY prompts (see the company-first rule).
 
 ## Acceptance
 
-- [ ] File path correct
-- [ ] Template sections complete
-- [ ] Quiz has exactly 10 items
-- [ ] Bridge sentence present
+- [ ] Every share figure carries its definition, source, and period
+- [ ] Pricing-power claims tied to evidence (margins, auction mechanics, contract terms)
+- [ ] Substitutes and switching costs assessed for this company's markets specifically
+
+## Quality bar (both modes)
+
+- Every company-specific number cited from the source pack (or a newly added cited source)
+- Every ratio carries context or a reference range — never a bare number
+- No investment advice; label hypotheses and estimates clearly
+- Do not invent undisclosed figures; write `not disclosed in structured form` where applicable
+
+## Curriculum mode (legacy — explicit request only)
+
+Only when the book's `meta.json` has `"format": "curriculum"` (the owner explicitly requested a curriculum/learning-path edition): write the layer file per [templates/curriculum-layer.md](../../templates/curriculum-layer.md) — 3–6 concept blocks with all required fields, 8–12 mastery checklist items, 3 misconceptions, exactly 10 quiz questions, and the bridge sentence. **Never** produce this format by default.

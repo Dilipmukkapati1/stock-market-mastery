@@ -1,64 +1,26 @@
-# Layer {N}: {Layer Name} — {Company Name} ({TICKER})
+# {Chapter Title} — {Company Name} ({TICKER})
 
-> Teaching document · not investment advice · generated {YYYY-MM-DD}
+{Part One chapters open with a 2–3 sentence summary of the chapter's verdict. Part Two chapters open with the question the research answers.}
 
-## Learning objective
+## {Section heading — topical, not generic}
 
-{One paragraph: what the learner can do after this layer.}
+{Narrative analysis. Company-specific throughout: reported figures with periods, named products/customers/competitors, dated events. Explain an investing concept only where a company fact needs it, in a sentence or two.}
 
-## Why this layer matters for {TICKER}
+| {Data table where it clarifies} | {Value} |
+| --- | --- |
+| … | … |
 
-{2–4 sentences bridging from the previous layer.}
+> **Source:** {Document / series} · {publisher} · filed/as-of {YYYY-MM-DD} · retrieved {YYYY-MM-DD} · {URL or accession if available}
 
-## Concepts
+## {Next section}
 
-### {Concept title}
+{…}
 
-**Anchor question:** …
-
-**Plain English:** …
-
-**Formal definition:** …
-
-**Formula:** … *(omit section if N/A)*
-
-**Reference range:** …
-
-**Worked example ({TICKER}):** …
-
-**Common mistake:** …
-
-**DIY check:** …
-
-> **Source:** …
-
-*(Repeat for 3–6 concepts.)*
-
-## Visualization notes (text-first)
-
-Describe tables or simple ASCII charts the reader should sketch. Kindle-friendly — no dependency on interactive widgets.
-
-## Mastery checklist
-
-- [ ] …
-- [ ] …
-
-## Common misconceptions
-
-1. …
-2. …
-3. …
-
-## Quiz (10 questions)
-
-1. **Q:** …  
-   **Options:** A) … B) … C) …  
-   **Answer:** …  
-   **Why:** …  
-   **Concept tag:** …
-
-*(Questions 2–10…)*
-
-## Bridge to next layer
-
-{One cross-cutting linking sentence.}
+<!--
+Template rules (two-part company book — see references/writing-standards.md):
+- No quiz sections, no mastery checklists, no DIY prompts, no concept-block scaffolding.
+- Every company-specific figure cited; estimates and third-party claims labeled.
+- Part One chapters: short and high-level (roughly 500–900 words).
+- Part Two chapters: deep research (roughly 1,200–2,200 words each).
+- End Part One chapters with one sentence bridging to the next chapter's subject (narrative continuity, not a "bridge to next layer" formula).
+-->

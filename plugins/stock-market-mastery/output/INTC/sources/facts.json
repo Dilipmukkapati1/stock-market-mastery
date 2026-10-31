@@ -1,0 +1,22 @@
+{
+  "ticker": "INTC",
+  "cik": "0000050863",
+  "retrievedAt": "2026-10-31",
+  "facts": {
+    "revenue_q3_2026": {"value": 16.513, "unit": "USD billions", "tag": "earnings release", "end": "2026-09-26", "filed": "2026-10-29"},
+    "dcai_revenue_q3_2026": {"value": 7.318, "unit": "USD billions", "tag": "earnings release segment table", "end": "2026-09-26", "filed": "2026-10-29"},
+    "foundry_external_revenue_q3_2026": {"value": 0.411, "unit": "USD billions", "tag": "Form 10-Q segment note", "end": "2026-09-26", "filed": "2026-10-30"},
+    "eps_gaap_q3_2026": {"value": 0.60, "unit": "USD", "tag": "earnings release", "end": "2026-09-26", "filed": "2026-10-29"},
+    "ocf_q3_2026": {"value": 5.082, "unit": "USD billions", "tag": "earnings release", "end": "2026-09-26", "filed": "2026-10-29"},
+    "revenue_fy2025": {"value": 52.9, "unit": "USD billions", "tag": "Form 10-K", "end": "2025-12-27", "filed": "2026"}
+  },
+  "filings": [
+    {"form": "10-K", "periodEnd": "2025-12-27", "filed": "2026"},
+    {"form": "earnings release", "periodEnd": "2026-09-26", "filed": "2026-10-29"},
+    {"form": "10-Q", "periodEnd": "2026-09-26", "filed": "2026-10-30", "accession": "0000050863-26-000191"}
+  ],
+  "macro": [
+    {"id": "FEDFUNDS target range", "value": "3.75-4.00%", "asOf": "2026-10-28", "source": "Federal Reserve"},
+    {"id": "S&P 500 close", "value": 7580.07, "asOf": "2026-10-30", "source": "market data via research file"}
+  ]
+}

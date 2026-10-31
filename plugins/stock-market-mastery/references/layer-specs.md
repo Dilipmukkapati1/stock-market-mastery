@@ -1,52 +1,42 @@
-# Seven-layer funnel — document specs
+# Book spec — Stock Market Mastery company books
 
-Generate one Markdown lesson file per layer under `output/{TICKER}/`.
+The default deliverable is the **two-part company book** (see writing-standards.md, "The company-first rule"). This file defines its file layout and chapter specs.
 
-| # | File | Skill | Learner job |
-| - | ---- | ----- | ----------- |
-| 1 | `01-market.md` | `market-context-agent` | Place the stock in market, rates, FX, vehicle context |
-| 2 | `02-industry.md` | `industry-structure-agent` | Industry structure, competition, pricing power |
-| 3 | `03-company.md` | `company-profile-agent` | Business model, segments, moat hypotheses |
-| 4 | `04-financials.md` | `financials-agent` | Statements, ratios, quality of earnings basics |
-| 5 | `05-earnings.md` | `earnings-agent` | Beat/miss vs guidance, drivers, what management emphasized |
-| 6 | `06-products.md` | `product-tech-agent` | Products/tech roadmap vs revenue reality |
-| 7 | `07-supply-chain.md` | `supply-chain-agent` | Dependencies, concentration, geo/operational risk |
+## Slot mapping (builder contract)
 
-Also produce when orchestrating a full book:
+`scripts/md_to_epub.py` collects a fixed set of slot filenames. Two-part content is written into the slots positionally; **real titles live in each file's first heading** and are what the reader sees.
 
-| File | Skill |
-| ---- | ----- |
-| `00-front-matter.md` | orchestrator |
-| `08-document-literacy.md` | `document-literacy-agent` |
-| `09-capstone.md` | orchestrator |
-| `10-quizzes.md` | each layer skill contributes; orchestrator assembles |
-| `book.md` | assembled full curriculum |
-| `meta.json` | ticker, name, generatedAt, source retrievedAt |
+| Slot file | Two-part content |
+| --- | --- |
+| `00-front-matter.md` | Title page matter, how this book is organized, primary documents used, disclaimer |
+| `01-market.md` | **Part One — Management** |
+| `02-industry.md` | **Part One — The Company** |
+| `03-company.md` | **Part One — Financials** |
+| `04-financials.md` | **Part One — The Product** |
+| `05-earnings.md` | **Part One — Product Quality** |
+| `06-products.md` | **Part One — Customers** |
+| `07-supply-chain.md` | **Part Two — Deep research I** (the business in depth: industry, model, moat, the financial story) |
+| `08-document-literacy.md` | **Part Two — Deep research II** (products/technology in depth, competition, valuation, risks — and any company-specific deep-dive chapter the story demands) |
+| `09-capstone.md` | Optional Part Two overflow chapter (use when the deep research needs a third chapter; omit otherwise) |
+| `10-quizzes.md` | **Unused in the two-part format. Do not create.** (Legacy curriculum only.) |
 
-## Layer 1 focus
+Also produce: `meta.json` (ticker, companyName, generatedAt, currencyNote, primaryFiling, status, grader), `sources/` (source-pack.md, facts.json), and `grading-report.md` after the grader pass.
 
-Indices vs single stock, cap tiers, bull/bear/correction, rates → discounting, fees/ETF vs mutual fund, home-country bias, macro dashboard relevance to *this* company.
+## Part One chapter specs (short, high-level, numbers-led)
 
-## Layer 2 focus
+- **Management** — who runs it; track record and capital-allocation history; governance and control (voting structure, key holders); incentives; credibility of current guidance and promises.
+- **The Company** — what it does; segments with revenue and operating income; how it makes money; geography; stated strategy.
+- **Financials** — the statements in brief: growth, margin structure, cash generation and free cash flow, balance-sheet strength, capital returns; quality-of-earnings flags (one-time items called out, both directions).
+- **The Product** — the offerings mapped to the revenue they feed; flagship products' status (shipping / ramping / announced); the roadmap in one pass.
+- **Product Quality** — how good the products actually are: competitive standing, benchmarks and reviews where credible, execution record (on-time vs slipped), known weaknesses.
+- **Customers** — who buys, concentration, marquee customers (named only as disclosed/reported, labeled), switching costs, demand visibility (backlog, contracts).
 
-TAM/SAM only if grounded; concentration; substitutes; switching costs; cyclicality; who sets price.
+## Part Two chapter specs (deep research)
 
-## Layer 3 focus
+- **Deep research I** — the business in depth: industry structure and the company's position; the business model's mechanics; moat analysis as labeled hypotheses with evidence for and against; the multi-year financial story (not just the latest quarter); the most recent earnings event fully dissected (guidance vs actual, drivers, one-time items, management emphasis, market verdict).
+- **Deep research II** — products and technology in depth; the supply chain and its single points of failure; competition (named rivals, share data with definitions and dates); valuation (multiples in context, why the headline multiple may mislead, analyst debate reported and labeled); risks and the bull/bear cases; what would change the picture.
+- A company-specific deep-dive chapter (e.g., a silicon program, a foundry build-out, a litigation overhang) belongs in Part Two, weighted to the company's real story — as its own chapter in the `09-capstone.md` slot when the two standard chapters would crowd it.
 
-How the company makes money; segment mix; customers; geographic mix; stated strategy; moat *hypotheses* (labeled as such).
+## Legacy curriculum edition (opt-in only)
 
-## Layer 4 focus
-
-Income statement, balance sheet, cash flow; margins; leverage/liquidity; FCF; one quality-of-earnings angle. Every ratio needs a reference range.
-
-## Layer 5 focus
-
-Guidance vs actual (define beat/miss); YoY/QoQ drivers; one-time items; transcript themes tied to numbers.
-
-## Layer 6 focus
-
-Product/platform map tied to disclosed revenue; R&D vs commercialization; obsolescence risk.
-
-## Layer 7 focus
-
-Critical suppliers/customers if disclosed; single points of failure; geo/regulatory exposure; how a shock hits financials.
+The repo's original format — seven teaching layers with concept blocks, per-layer 10-question quizzes, a document-literacy chapter, a capstone assignment, and a consolidated quizzes file — is produced **only when the owner explicitly asks for a "curriculum" or "learning-path" edition**. It is never the default. (Owner preference, 2026-10-21; reconfirmed 2026-10-31 after a curriculum-format Google/Intel build reproduced the rejected Mercor-v1 problem.) The per-layer agent skills retain the curriculum specs for this mode only, in their "Curriculum mode" sections.

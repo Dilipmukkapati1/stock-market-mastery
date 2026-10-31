@@ -1,0 +1,17 @@
+# Part One — The Product
+
+Alphabet's portfolio divides into products that *are* the business, products that defend it, and products that are options on a different future. Mapping each to the revenue it feeds is the fastest way to see the company clearly.
+
+**Search — the core, being rebuilt in place.** Search & other produced $63.350B in Q3 (+12%). The product is mid-metamorphosis: AI Overviews now reach 2.5 billion users, AI Mode has passed 1 billion monthly users, and queries inside AI Mode run about three times longer than classic queries (Q3 call). The strategic fact is that Alphabet is replacing its own most profitable interface — the ten blue links and their ads — with AI answers, and doing it faster than any challenger could force it to. Whether the new surface monetizes at parity is the single most important product question in this book; the early evidence (Search still growing double digits through the transition, management describing ad formats scaling inside AI surfaces) is encouraging, not conclusive.
+
+**YouTube — the media business.** YouTube advertising was $11.207B in Q3 (+9%), and YouTube Premium/TV anchor the subscriptions line ($14.290B for subscriptions, platforms and devices, +11%). Nielsen measured YouTube as the **#1 U.S. TV distributor, with a record 15.8% of all TV time in August 2026** — a free, ad-supported product that outdraws every network and streamer, monetized twice (ads and subscriptions) off the same viewing.
+
+**Google Cloud and Gemini — the enterprise platform.** Cloud's product is the full AI stack sold to others: infrastructure, the Gemini models, and — the 2025–26 development — the TPU itself. Gemini is simultaneously a consumer product (the app passed 1 billion users), an API business, and Cloud's flagship model family; Google reports processing on the order of 32 billion tokens per minute across its products and APIs (Q3 call). The TPU has crossed from internal advantage to catalog item: rented on GCP, sold as systems into customers' data centers, supplied through partners, and — from 2027 — offered on Oracle's cloud (Part Two covers the program in depth).
+
+**Android and Chrome — the distribution assets.** Android runs on roughly 75% of smartphones sold (Counterpoint, Q2 2026) and 69% of mobile web usage (StatCounter). These products earn modest direct revenue; their product role is defensive — they keep Google's services the default on the world's devices, which is what the $16.4B quarterly TAC bill otherwise buys. Their value appears in Search's survival, not in an Android revenue line.
+
+**Waymo — the option.** Inside Other Bets: a $126 billion valuation at its February 2026 raise, over 500,000 paid rides per week (April 2026, the latest published), roughly 14–15 U.S. metros, and a target of 1 million rides per week by end-2026. It is the portfolio's most valuable option and still a rounding error in group revenue ($372M for all of Other Bets in Q3).
+
+The portfolio's logic is concentration, not diversification: everything either feeds the advertising flywheel, sells the AI stack, defends distribution, or is Waymo. Products that fit none of those four jobs have historically been cut, whatever their popularity.
+
+> **Source:** Alphabet Q3 2026 earnings release · 2026-10-28 (revenue lines); Q3 2026 earnings call · 2026-10-28 (AI Mode, tokens, Gemini app users — company statements); Nielsen TV distributor data · August 2026; StatCounter and Counterpoint shares · 2026 (secondary measurement, labeled).

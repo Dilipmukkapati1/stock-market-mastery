@@ -1,0 +1,28 @@
+{
+  "ticker": "GOOGL",
+  "cik": "0001652044",
+  "retrievedAt": "2026-10-31",
+  "facts": {
+    "revenue_q3_2026": {"value": 127.577, "unit": "USD billions", "tag": "earnings release Ex. 99.1", "end": "2026-09-30", "filed": "2026-10-28"},
+    "cloud_revenue_q3_2026": {"value": 30.709, "unit": "USD billions", "tag": "earnings release Ex. 99.1", "end": "2026-09-30", "filed": "2026-10-28"},
+    "cloud_oi_q3_2026": {"value": 11.121, "unit": "USD billions", "tag": "earnings release Ex. 99.1", "end": "2026-09-30", "filed": "2026-10-28"},
+    "operating_income_q3_2026": {"value": 40.576, "unit": "USD billions", "tag": "earnings release Ex. 99.1", "end": "2026-09-30", "filed": "2026-10-28"},
+    "eps_diluted_q3_2026": {"value": 2.12, "unit": "USD", "tag": "earnings release Ex. 99.1", "end": "2026-09-30", "filed": "2026-10-28"},
+    "ocf_q3_2026": {"value": 42.290, "unit": "USD billions", "tag": "earnings release Ex. 99.1", "end": "2026-09-30", "filed": "2026-10-28"},
+    "capex_q3_2026": {"value": 51.355, "unit": "USD billions", "tag": "earnings release Ex. 99.1 (purchases of PPE)", "end": "2026-09-30", "filed": "2026-10-28"},
+    "fcf_q3_2026": {"value": -9.065, "unit": "USD billions", "tag": "OCF minus capex, per release", "end": "2026-09-30", "filed": "2026-10-28"},
+    "backlog_q3_2026": {"value": 561, "unit": "USD billions", "tag": "Q3 2026 earnings call", "end": "2026-09-30", "filed": "2026-10-28"},
+    "revenue_fy2025": {"value": 402.836, "unit": "USD billions", "tag": "Form 10-K", "end": "2025-12-31", "filed": "2026-02-05"}
+  },
+  "filings": [
+    {"form": "10-K", "periodEnd": "2025-12-31", "filed": "2026-02-05"},
+    {"form": "10-Q", "periodEnd": "2026-06-30", "filed": "2026-07-23"},
+    {"form": "8-K Ex. 99.1", "periodEnd": "2026-09-30", "filed": "2026-10-28"},
+    {"form": "10-Q", "periodEnd": "2026-09-30", "filed": "2026-10-29"},
+    {"form": "DEF 14A", "periodEnd": "2026-04-06", "filed": "2026-04-24"}
+  ],
+  "macro": [
+    {"id": "FEDFUNDS target range", "value": "3.75-4.00%", "asOf": "2026-10-28", "source": "Federal Reserve"},
+    {"id": "S&P 500 close", "value": 7580.07, "asOf": "2026-10-30", "source": "market data via research file"}
+  ]
+}

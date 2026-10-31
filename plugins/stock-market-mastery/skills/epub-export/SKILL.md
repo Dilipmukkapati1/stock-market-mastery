@@ -1,7 +1,7 @@
 ---
 name: epub-export
 description: >-
-  Exports a Stock Market Mastery company curriculum folder to a Kindle-friendly
+  Exports a Stock Market Mastery company book folder to a Kindle-friendly
   EPUB using scripts/md_to_epub.py. Use when the user asks for EPUB, Kindle,
   e-reader export, or a readable book file from generated Markdown lessons.
 ---
@@ -12,13 +12,13 @@ Turn `output/{TICKER}/` Markdown into an EPUB **named for the business** — `<C
 
 ## Preconditions
 
-- Prefer a graded curriculum (`grading-report.md` overall **passed**)
+- Prefer a graded book (`grading-report.md` overall **passed**)
 - Need either `book.md` **or** ordered chapter files `00-*.md` … `10-*.md`
 
 ## Steps
 
 1. Confirm folder path (`output/{TICKER}/`).
-2. If `book.md` is missing but chapters exist, assemble `book.md` first (same order as the orchestrator).
+2. Build from the chapter slot files (`00-*.md` … `09-*.md`). Do **not** create a `book.md`: when one exists the builder collapses the whole book into a single chapter and the table of contents is lost.
 3. Install deps once (venv — required on Homebrew Python):
 
 ```bash

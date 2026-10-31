@@ -1,0 +1,26 @@
+{
+  "ticker": "INTC",
+  "companyName": "Intel",
+  "generatedAt": "2026-10-31",
+  "currencyNote": "US-GAAP, USD",
+  "primaryFiling": {
+    "form": "10-Q",
+    "filed": "2026-10-30",
+    "cik": "0000050863"
+  },
+  "layers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "status": "complete",
+  "grader": {
+    "ran": true,
+    "overallStatus": "passed"
+  },
+  "format": "two-part"
+}

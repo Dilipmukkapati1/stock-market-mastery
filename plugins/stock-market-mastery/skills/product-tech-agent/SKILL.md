@@ -1,49 +1,44 @@
 ---
 name: product-tech-agent
 description: >-
-  Writes Layer 6 (Product and technology) Stock Market Mastery lesson Markdown for a
-  ticker under output/{TICKER}/06-products.md. Use when generating or revising the
-  Product and technology layer learning document — not application code.
+  Writes Part One's The Product and Product Quality chapters and the products-in-depth section of Part Two, Deep Research II, for a Stock Market Mastery two-part company book. Curriculum editions only on explicit request.
 ---
 
-# Product and technology agent (Layer 6)
+# Product and technology agent
 
-Generate a **teaching document**, not code.
+Generate **company-analysis writing**, not code and not coursework.
 
 ## Before writing
 
 1. Ensure `output/{TICKER}/sources/` exists (run **document-fetch-agent** if missing)
-2. Read [references/writing-standards.md](../../references/writing-standards.md)
+2. Read [references/writing-standards.md](../../references/writing-standards.md) — especially the company-first rule
 3. Read [references/citation-rules.md](../../references/citation-rules.md)
-4. Read Layer 6 notes in [references/layer-specs.md](../../references/layer-specs.md)
-5. Use structure in [templates/layer-lesson.md](../../templates/layer-lesson.md)
+4. Read the chapter specs in [references/layer-specs.md](../../references/layer-specs.md)
+5. Use the chapter structure in [templates/layer-lesson.md](../../templates/layer-lesson.md)
 
-## Layer focus
+## Focus (default two-part book)
 
-Map products/platforms to disclosed revenue where possible; R&D vs commercialization; roadmap risk; obsolescence. Prefer IR + filings over marketing blogs.
+Map {TICKER}'s products to the revenue they feed; grade each flagship's status honestly (shipping / ramping / sampling / announced); assess quality and competitiveness from credible evidence (benchmarks, reviews, share, attach rates) rather than launch claims; cover roadmap and obsolescence risk.
 
-## Output
+## Output (default two-part book)
 
-Write `output/{TICKER}/06-products.md` with:
+Write `04-financials.md` (Part One — The Product) and `05-earnings.md` (Part One — Product Quality), and contribute the products-in-depth section of `08-document-literacy.md` (Part Two — Deep Research II), in `output/{TICKER}/`.
 
-- Learning objective + why it matters for this ticker
-- 3–6 full concept blocks (all required fields)
-- Text-first visualization notes (tables/ASCII only)
-- 8–12 mastery checklist items
-- 3 misconceptions
-- 10-question quiz (A/B/C, answer, why, concept tag)
-- Bridge sentence toward: Supply chain — what dependencies could break the product and financial story?
-
-## Quality bar
-
-- Every company-specific number cited from the source pack (or newly added cited source)
-- Every ratio includes an inline **reference range**
-- No investment advice; label hypotheses clearly
-- Do not invent undisclosed figures
+Write narrative analysis: company-specific, numbers-led, cited. **No** concept-block scaffolding, quizzes, checklists, or DIY prompts (see the company-first rule).
 
 ## Acceptance
 
-- [ ] File path correct
-- [ ] Template sections complete
-- [ ] Quiz has exactly 10 items
-- [ ] Bridge sentence present
+- [ ] Every product tied to a reported revenue line or an explicit 'not disclosed' note
+- [ ] Status labels (shipping/ramping/sampling/announced) applied with dates
+- [ ] Quality claims rest on evidence beyond the company's own marketing
+
+## Quality bar (both modes)
+
+- Every company-specific number cited from the source pack (or a newly added cited source)
+- Every ratio carries context or a reference range — never a bare number
+- No investment advice; label hypotheses and estimates clearly
+- Do not invent undisclosed figures; write `not disclosed in structured form` where applicable
+
+## Curriculum mode (legacy — explicit request only)
+
+Only when the book's `meta.json` has `"format": "curriculum"` (the owner explicitly requested a curriculum/learning-path edition): write the layer file per [templates/curriculum-layer.md](../../templates/curriculum-layer.md) — 3–6 concept blocks with all required fields, 8–12 mastery checklist items, 3 misconceptions, exactly 10 quiz questions, and the bridge sentence. **Never** produce this format by default.

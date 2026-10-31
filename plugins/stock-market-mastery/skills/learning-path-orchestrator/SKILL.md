@@ -1,110 +1,106 @@
 ---
 name: learning-path-orchestrator
 description: >-
-  Orchestrates a full 7-layer Stock Market Mastery curriculum for a ticker into
-  Markdown learning documents (and optional EPUB). Use when the user asks to
-  generate a company learning path, curriculum, investment teaching book, or
-  full layered lessons for a ticker — not when building web apps or APIs.
+  Orchestrates a Stock Market Mastery company book for a ticker: by default the
+  two-part company book (Part One executive summary + Part Two deep research),
+  written to Markdown and optionally exported to EPUB. Use when the user asks
+  for a company book, company analysis, or a book on a ticker. Only when the
+  user explicitly asks for a "curriculum" or "learning-path" edition does it
+  produce the legacy seven-layer teaching format with quizzes.
 ---
 
-# Learning path orchestrator
+# Company book orchestrator
 
-Produce a **document curriculum**, never application code.
+Produce a **document book**, never application code.
+
+## Format decision (read first)
+
+- **Default: the two-part company book** — company-focused and in-depth, no quizzes, checklists, or framework chapters. This is the owner's standing preference (2026-10-21; see [references/writing-standards.md](../../references/writing-standards.md), "The company-first rule").
+- **Legacy curriculum edition** — seven layers with concept blocks and quizzes — **only** if the owner explicitly requests a curriculum/learning-path edition in this task. Never default to it, never mix the two formats in one book.
 
 ## Inputs
 
-- `ticker` (required), e.g. `TSM`, `AAPL`
+- `ticker` (required), e.g. `NVDA`, `GOOGL`, `INTC`
 - Optional: `companyName`, `asOf` date, `outDir` (default `output/{TICKER}/`)
 
 ## Non-negotiables
 
 1. Read [references/writing-standards.md](../../references/writing-standards.md)
-2. Read [references/layer-specs.md](../../references/layer-specs.md)
+2. Read [references/layer-specs.md](../../references/layer-specs.md) (slot mapping + chapter specs)
 3. Read [references/citation-rules.md](../../references/citation-rules.md)
-4. Follow [templates/layer-lesson.md](../../templates/layer-lesson.md) and [templates/company-book.md](../../templates/company-book.md)
+4. Follow [templates/layer-lesson.md](../../templates/layer-lesson.md) (chapter template)
 
-## Workflow
-
-Copy and track:
+## Workflow (two-part default)
 
 ```
-Curriculum progress for {TICKER}:
-- [ ] 1. document-fetch-agent → sources/
-- [ ] 2. 00-front-matter.md + meta.json
-- [ ] 3. Layers 1–7 (invoke each layer skill)
-- [ ] 4. document-literacy-agent → 08-document-literacy.md
-- [ ] 5. 09-capstone.md
-- [ ] 6. Assemble 10-quizzes.md + book.md
-- [ ] 7. content-grader-agent (fix blockers)
-- [ ] 8. Offer epub-export → <CompanyName>.epub
+Book progress for {TICKER}:
+- [ ] 1. document-fetch-agent → sources/ (source-pack.md, facts.json)
+- [ ] 2. 00-front-matter.md + meta.json (include "format": "two-part")
+- [ ] 3. Part One chapters (slots 01–06): Management, The Company, Financials, The Product, Product Quality, Customers
+- [ ] 4. Part Two chapters (slots 07–08, +09 if needed): deep research
+- [ ] 5. content-grader-agent (fix blockers)
+- [ ] 6. Offer epub-export → <CompanyName>.epub
 ```
 
 ### Step 1 — Source pack
 
-Invoke **document-fetch-agent** for `{TICKER}`. Do not invent filings.
+Invoke **document-fetch-agent** for `{TICKER}`. Do not invent filings. Research beyond filings (industry data, product status, analyst debate) must be dated and labeled per the citation rules.
 
 ### Step 2 — Front matter
 
-Write `output/{TICKER}/00-front-matter.md`:
+Write `output/{TICKER}/00-front-matter.md`: company name, ticker, CIK, reporting framework, how the book is organized (Part One / Part Two), the primary documents used, and the educational disclaimer. Write `meta.json` from [templates/meta.json](../../templates/meta.json) plus `"format": "two-part"`.
 
-- Company name, ticker, CIK, reporting framework (US-GAAP / IFRS)
-- How to use the book
-- Disclaimer: educational only, not investment advice
-- List of primary documents used
+### Step 3 — Part One (slots 01–06)
 
-Write `output/{TICKER}/meta.json` from [templates/meta.json](../../templates/meta.json).
+Write each chapter per the specs in layer-specs.md, using the agent skills as content specialists:
 
-### Step 3 — Layers in order
+| Slot file | Chapter | Lead skill |
+| --- | --- | --- |
+| `01-market.md` | Management | company-profile-agent |
+| `02-industry.md` | The Company | company-profile-agent (industry-structure-agent supports) |
+| `03-company.md` | Financials | financials-agent |
+| `04-financials.md` | The Product | product-tech-agent |
+| `05-earnings.md` | Product Quality | product-tech-agent |
+| `06-products.md` | Customers | company-profile-agent (supply-chain-agent supports) |
 
-For each layer, invoke the matching skill and require its Markdown file before continuing:
+Short and high-level (≈500–900 words each), numbers-led, cited.
 
-| Layer | Skill | Output file |
-| ----- | ----- | ----------- |
-| 1 | market-context-agent | `01-market.md` |
-| 2 | industry-structure-agent | `02-industry.md` |
-| 3 | company-profile-agent | `03-company.md` |
-| 4 | financials-agent | `04-financials.md` |
-| 5 | earnings-agent | `05-earnings.md` |
-| 6 | product-tech-agent | `06-products.md` |
-| 7 | supply-chain-agent | `07-supply-chain.md` |
+### Step 4 — Part Two (slots 07–08, optional 09)
 
-Each layer must include its 10-question quiz **inside** the layer file (per template).
+Deep research, ≈1,200–2,200 words per chapter:
 
-### Step 4 — Literacy + capstone
+- `07-supply-chain.md` — Deep research I: industry and business model in depth; moat hypotheses with evidence; the multi-year financial story; the latest earnings event dissected (earnings-agent).
+- `08-document-literacy.md` — Deep research II: products/technology in depth (product-tech-agent); supply chain (supply-chain-agent); competition; valuation and market context (market-context-agent); risks, bull/bear.
+- `09-capstone.md` — optional third deep-research chapter when the company's story demands one (e.g., a silicon program, a foundry build-out). Omit the file otherwise. **Never** write a capstone *assignment* in a two-part book.
 
-- Invoke **document-literacy-agent**
-- Write `09-capstone.md`: one-paragraph thesis assignment requiring **one specific cited fact from each of the seven layers**
+Do **not** create `10-quizzes.md` or a consolidated `book.md` in the two-part format (a `book.md` collapses the EPUB to a single chapter).
 
-### Step 5 — Assemble
+### Step 5 — Grade + EPUB
 
-1. `10-quizzes.md` — extract/consolidate all layer quizzes for easy practice
-2. `book.md` — concatenate chapters in order with `#` titles preserved; use thematic `---` breaks
+1. Run **content-grader-agent** on `output/{TICKER}/`; fix blockers.
+2. epub-export when the user wants Kindle/EPUB (default yes if they said so).
 
-### Step 6 — Grade + EPUB
+## Curriculum mode (only on explicit request)
 
-1. Run **content-grader-agent** on `output/{TICKER}/`
-2. Fix any **blocker** findings before calling done
-3. Ask whether to run **epub-export** (default yes if user said Kindle/EPUB)
+If — and only if — the owner explicitly asks for a curriculum/learning-path edition: set `"format": "curriculum"` in meta.json, follow the legacy specs (seven layer files with concept blocks and 10-question quizzes per [templates/curriculum-layer.md](../../templates/curriculum-layer.md), document-literacy chapter, capstone assignment, consolidated `10-quizzes.md`), and grade against the grader's curriculum rules.
 
-## Output tree
+## Output tree (two-part)
 
 ```
 output/{TICKER}/
   meta.json
   sources/
   00-front-matter.md
-  01-market.md … 07-supply-chain.md
-  08-document-literacy.md
-  09-capstone.md
-  10-quizzes.md
-  book.md
-  <CompanyName>.epub  # after epub-export, named for the business
-  grading-report.md  # after content-grader-agent
+  01-market.md … 08-document-literacy.md   (slot names; real titles in headings)
+  09-capstone.md                            (optional deep-research chapter)
+  <CompanyName>.epub                        (after epub-export, named for the business)
+  grading-report.md
 ```
 
 ## Done criteria
 
-- All seven layers present with citations, reference ranges, quizzes
-- Capstone requires facts from all layers
-- No web/app code generated
+- Part One complete (six chapters) and Part Two complete (two or three chapters), all cited
+- **Zero** quiz sections, mastery checklists, DIY prompts, or assignment apparatus anywhere in the book
+- Every chapter is about this company; generic concepts appear only in passing, in service of a company fact
 - Grader has no unresolved blockers
+- No web/app code generated
